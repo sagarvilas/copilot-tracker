@@ -12,7 +12,8 @@
         <toolWindow factoryClass="com.github.sagarvilas.copilottracker.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
     </extensions>
 
-    <applicationListeners>
-        <listener class="com.github.sagarvilas.copilottracker.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
+    <extensions defaultExtensionNs="com.intellij">
+        <completion.contributor implementationClass="CopilotCompletionContributor"/>
+        <postStartupActivity implementation="com.github.sagarvilas.copilottracker.startup.CopilotActivity"/>
+    </extensions>
 </idea-plugin>
